@@ -1,11 +1,12 @@
 <div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{competition?.name}}</li>
-    </ol>
-  </nav>
-  <h3>{{competition?.name}}</h3>
+<!--  <nav aria-label="breadcrumb">-->
+<!--    <ol class="breadcrumb">-->
+<!--      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>-->
+<!--      <li class="breadcrumb-item active" aria-current="page">{{competition?.name}}</li>-->
+<!--    </ol>-->
+<!--  </nav>-->
+
+  <app-title [title]="competition?.name"></app-title>
   <div>
     <div class="spinner-border" role="status" *ngIf="loading">
       <span class="sr-only">Loading...</span>

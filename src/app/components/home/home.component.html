@@ -1,15 +1,9 @@
-<div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Home</li>
-    </ol>
-  </nav>
-  <div class="row">
-    <div class="spinner-border" role="status" *ngIf="loading">
-      <span class="sr-only">Loading...</span>
-    </div>
-    <div class="col-sm-4 col-lg-3" *ngFor="let competition of competitions">
-      <a routerLink="{{competition.code}}">{{competition.name}}</a>
-    </div>
+<app-title [title]="title"></app-title>
+<div class="row">
+  <div class="spinner-border" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="col-sm-4 col-lg-3" *ngFor="let competition of competitions">
+    <a class="competition-link" routerLink="{{competition.code}}">{{competition.name}}</a>
   </div>
 </div>

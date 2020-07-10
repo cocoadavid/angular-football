@@ -1,0 +1,13 @@
+nav.ngf-navbar {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  /*background-color: #0D0D0D;*/
+}
+
+nav.ngf-navbar a {
+  color: rgba(255,255,255, 0.8);
+  display: inline-block;
+  padding: 0 8px;
+}

@@ -8,6 +8,7 @@ import {Competition} from "../../models/competition";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  title = "Competitions";
   competitions: Competition[];
   loading: boolean;
 
