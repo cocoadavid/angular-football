@@ -34,4 +34,11 @@ export class FootballDataService {
         params
       })
   }
+
+  getMatchDetails(matchId){
+    return this.http.get(`${this.rootUrl}/matches/${matchId}`,
+      {
+        headers: {"X-Auth-Token": this.apiKey},
+      })
+  }
 }

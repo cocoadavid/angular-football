@@ -1,1 +1,8 @@
-<p>match-details works!</p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/{{competitionCode}}">{{matchDetails?.competition?.name}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Match</li>
+  </ol>
+</nav>
+<p>match-details works! {{matchId}}</p>

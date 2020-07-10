@@ -1,1 +1,22 @@
-<p>matches works!</p>
+<div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{competition?.name}}</li>
+    </ol>
+  </nav>
+  <h3>{{competition?.name}}</h3>
+  <div>
+    <div class="spinner-border" role="status" *ngIf="loading">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngFor="let match of matches">
+      <a routerLink="/{{competition.code}}/{{match.id}}">
+      <span>{{match.homeTeam.name}}</span>
+      <span>{{match.score?.fullTime?.homeTeam}} - {{match.score?.fullTime?.awayTeam}}</span>
+      <span>{{match.awayTeam.name}}</span>
+      <span class="badge badge-secondary" *ngIf="match.status === 'IN_PLAY'">LIVE</span>
+      </a>
+    </div>
+  </div>
+</div>

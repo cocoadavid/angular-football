@@ -9,12 +9,16 @@ import {Competition} from "../../models/competition";
 })
 export class HomeComponent implements OnInit {
   competitions: Competition[];
+  loading: boolean;
+
   constructor(
     private footballDataService: FootballDataService,
   ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.footballDataService.getCompetitions().subscribe(data => {
+      this.loading = false;
       this.competitions = data["competitions"];
       console.log(this.competitions)
     })
