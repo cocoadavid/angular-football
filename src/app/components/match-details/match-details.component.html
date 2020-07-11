@@ -1,16 +1,21 @@
 <app-breadcrumb [links]="breadcrumbItems"></app-breadcrumb>
-<!--<p>match-details works! {{matchId}}</p>-->
 <div class="match-info">
   {{matchDetails?.competition?.name}} |
   Matchday {{matchDetails?.season?.currentMatchday}} |
   {{matchDetails ? moment(matchDetails?.utcDate).format("DD/MM/YYYY HH:mm") : ''}}
 </div>
+<div *ngIf="matchDetails?.venue" class="match-info">
+  venue: {{matchDetails?.venue}}
+</div>
 <div class="match-info">
   <span class="live ngf-green" *ngIf="matchDetails?.status === 'IN_PLAY'">live</span>
-  <span class="live ngf-green" *ngIf="matchDetails?.status === 'PAUSED'">half-time</span>
+  <span class="half-time ngf-yellow" *ngIf="matchDetails?.status === 'PAUSED'">half - time</span>
   <span *ngIf="matchDetails?.status !== 'IN_PLAY' && matchDetails?.status !== 'PAUSED'">
     {{matchDetails?.status}}
   </span>
+</div>
+<div class="match-clock" title="minute" *ngIf="matchClock">
+  {{matchClock}}'
 </div>
 <div class="match-details-score-and-teams row">
   <div class="col details-home">
@@ -30,4 +35,7 @@
   <div class="col details-away">
     {{matchDetails?.awayTeam?.name}}
   </div>
+</div>
+<div class="match-info" title="half-time score">
+  <span *ngIf="matchDetails?.score?.halfTime?.homeTeam !== null">({{matchDetails?.score?.halfTime?.homeTeam}} - {{matchDetails?.score?.halfTime?.awayTeam}})</span>
 </div>

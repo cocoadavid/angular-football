@@ -1,8 +1,13 @@
 export interface Score {
   duration: string;
-  extraTime: object;
-  fullTime: object;
-  halfTime: object;
+  extraTime: scoreTime;
+  fullTime: scoreTime;
+  halfTime: scoreTime;
   penalties: object;
   winner: string;
+}
+
+interface scoreTime {
+  homeTeam: any;
+  awayTeam: any;
 }

@@ -29,3 +29,13 @@ a.match-link:hover {
 .last-col {
   text-align: right;
 }
+
+@media screen and (max-width: 768px) {
+  .match-details-score-and-teams {
+    font-size: 1rem;
+  }
+
+  .last-col, .first-col {
+    text-align: center;
+  }
+}

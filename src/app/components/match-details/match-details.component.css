@@ -2,11 +2,15 @@
   font-size: 2rem;
 }
 
-.match-info {
+.match-info, .match-clock {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+}
+
+.match-clock {
+  margin-bottom: 8px;
 }
 
 .details-home, .details-away, .details-score {
@@ -46,8 +50,11 @@
   background-color: #CFAC44;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 540px) {
   .match-details-score-and-teams {
-    font-size: 1rem;
+    font-size: 0.875rem;
+  }
+  .details-score {
+    max-width: 140px;
   }
 }

@@ -28,15 +28,21 @@ a:hover {
   background-color: #CFAC44;
 }
 
-.live {
+.live, .half-time {
   color: #ffffff;
   font-size: 0.75rem;
   padding: 2px 6px;
   border-radius: 4px;
+  font-weight: 500;
   text-transform: uppercase;
   animation: spin 4s infinite ease-in-out;
   animation-delay: 1s;
   display: inline-block;
+}
+
+.half-time {
+  animation: none;
+  color: rgb(50,50,50);
 }
 
 @keyframes spin {

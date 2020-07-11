@@ -4,14 +4,14 @@
 </div>
 <div class="container">
   <a class="row match-link" *ngFor="let match of matches" routerLink="/{{competition.code}}/{{match.id}}">
-    <span class="col-md">{{moment(match.utcDate).format("DD/MM HH:mm")}}</span>
+    <span class="col-md first-col">{{moment(match.utcDate).format("DD/MM HH:mm")}}</span>
     <span class="col home-team">{{match.homeTeam.name}}</span>
     <span class="col score">{{match.score?.fullTime?.homeTeam}} - {{match.score?.fullTime?.awayTeam}}</span>
     <span class="col away-team">{{match.awayTeam.name}}</span>
     <span class="col-md last-col">
       <span class="live ngf-green" *ngIf="match.status === 'IN_PLAY'">live</span>
-      <span class="live ngf-green" *ngIf="match.status === 'PAUSED'">half-time</span>
-      <span title="half-time score" *ngIf="match.status === 'FINISHED'">({{match.score?.halfTime?.homeTeam}} - {{match.score?.halfTime?.awayTeam}})</span>
+      <span class="half-time ngf-yellow" *ngIf="match.status === 'PAUSED'">half - time</span>
+      <span title="score" *ngIf="match.status === 'FINISHED'">({{match.score?.halfTime?.homeTeam}} - {{match.score?.halfTime?.awayTeam}})</span>
     </span>
   </a>
 </div>
