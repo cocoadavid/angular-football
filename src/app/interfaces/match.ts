@@ -1,3 +1,5 @@
+import {Score} from "./score";
+
 export interface Match {
   awayTeam: object;
   group: string;
@@ -7,7 +9,7 @@ export interface Match {
   matchday: number;
   odds: object;
   referees: object[];
-  score: object;
+  score: Score;
   season: object;
   stage: string;
   status: string;

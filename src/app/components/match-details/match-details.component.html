@@ -1,2 +1,33 @@
 <app-breadcrumb [links]="breadcrumbItems"></app-breadcrumb>
-<p>match-details works! {{matchId}}</p>
+<!--<p>match-details works! {{matchId}}</p>-->
+<div class="match-info">
+  {{matchDetails?.competition?.name}} |
+  Matchday {{matchDetails?.season?.currentMatchday}} |
+  {{matchDetails ? moment(matchDetails?.utcDate).format("DD/MM/YYYY HH:mm") : ''}}
+</div>
+<div class="match-info">
+  <span class="live ngf-green" *ngIf="matchDetails?.status === 'IN_PLAY'">live</span>
+  <span class="live ngf-green" *ngIf="matchDetails?.status === 'PAUSED'">half-time</span>
+  <span *ngIf="matchDetails?.status !== 'IN_PLAY' && matchDetails?.status !== 'PAUSED'">
+    {{matchDetails?.status}}
+  </span>
+</div>
+<div class="match-details-score-and-teams row">
+  <div class="col details-home">
+    <span>
+      {{matchDetails?.homeTeam?.name}}
+    </span>
+  </div>
+  <div class="col-md details-score">
+    <span *ngIf="matchDetails?.score?.winner === 'HOME_TEAM'" class="winner"></span>
+    <span *ngIf="matchDetails?.score?.winner === 'AWAY_TEAM'" class="loser"></span>
+    <span *ngIf="matchDetails?.score?.winner === 'DRAW'" class="draw"></span>
+    <span>{{matchDetails?.score.fullTime?.homeTeam}} - {{matchDetails?.score.fullTime?.awayTeam}}</span>
+    <span *ngIf="matchDetails?.score?.winner === 'AWAY_TEAM'" class="winner"></span>
+    <span *ngIf="matchDetails?.score?.winner === 'HOME_TEAM'" class="loser"></span>
+    <span *ngIf="matchDetails?.score?.winner === 'DRAW'" class="draw"></span>
+  </div>
+  <div class="col details-away">
+    {{matchDetails?.awayTeam?.name}}
+  </div>
+</div>

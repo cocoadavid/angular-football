@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import {FootballDataService} from "../../services/football-data.service";
 import {BreadcrumbItem} from "../../models/breadcrumb-item";
+import {MatchDetails} from "../../interfaces/match-details";
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-match-details',
@@ -10,9 +12,10 @@ import {BreadcrumbItem} from "../../models/breadcrumb-item";
 })
 export class MatchDetailsComponent implements OnInit {
   matchId: number;
-  matchDetails;
+  matchDetails: MatchDetails;
   competitionCode: string;
   breadcrumbItems: BreadcrumbItem[];
+  moment: any = moment;
 
   constructor(
     private route: ActivatedRoute,

@@ -11,6 +11,7 @@
     <span class="col-md last-col">
       <span class="live ngf-green" *ngIf="match.status === 'IN_PLAY'">live</span>
       <span class="live ngf-green" *ngIf="match.status === 'PAUSED'">half-time</span>
+      <span title="half-time score" *ngIf="match.status === 'FINISHED'">({{match.score?.halfTime?.homeTeam}} - {{match.score?.halfTime?.awayTeam}})</span>
     </span>
   </a>
 </div>

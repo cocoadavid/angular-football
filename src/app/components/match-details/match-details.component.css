@@ -1,0 +1,53 @@
+.match-details-score-and-teams {
+  font-size: 2rem;
+}
+
+.match-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.details-home, .details-away, .details-score {
+  display: flex;
+  align-items: center;
+}
+
+.details-home {
+  justify-content: flex-end;
+}
+
+.details-away {
+  justify-content: flex-start;
+}
+
+.details-score {
+  justify-content: center;
+  max-width: 200px;
+}
+
+.winner, .loser, .draw {
+  display: inline-block;
+  height: 80%;
+  width: 4px;
+  margin: 0 16px;
+}
+
+.winner {
+  background-color: #5E8C30;
+}
+
+.loser {
+  background-color: #BF0A2B;
+}
+
+.draw {
+  background-color: #CFAC44;
+}
+
+@media screen and (max-width: 600px) {
+  .match-details-score-and-teams {
+    font-size: 1rem;
+  }
+}

@@ -29,34 +29,3 @@ a.match-link:hover {
 .last-col {
   text-align: right;
 }
-
-.live {
-  color: #ffffff;
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  animation: spin 5s infinite ease-in-out;
-  animation-delay: 1s;
-  display: inline-block;
-}
-
-@keyframes spin {
-  0% {
-    -moz-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-
-  20% {
-    -moz-transform: rotateY(360deg);
-    -ms-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-
-  100% {
-    -moz-transform: rotateY(360deg);
-    -ms-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-}

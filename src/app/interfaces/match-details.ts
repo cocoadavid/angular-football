@@ -1,3 +1,6 @@
+import {Competition} from "./competition";
+import {Score} from "./score";
+
 export interface MatchDetails {
   awayTeam: object;
   group: string;
@@ -7,11 +10,11 @@ export interface MatchDetails {
   matchday: number;
   odds: object;
   referees: object[];
-  score: object;
+  score: Score;
   season: object;
   stage: string;
   status: string;
   utcDate: string;
-  competition: object;
+  competition: Competition;
   venue: string;
 }
