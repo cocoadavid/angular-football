@@ -7,10 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatchesComponent } from './components/matches/matches.component';
 import { MatchDetailsComponent } from './components/match-details/match-details.component';
-import { TitleComponent } from './components/shared/title/title.component';
+import { BreadcrumbComponent } from './components/shared/breadcrumb/breadcrumb.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MatchesComponent, MatchDetailsComponent, TitleComponent],
+  declarations: [AppComponent, HomeComponent, MatchesComponent, MatchDetailsComponent, BreadcrumbComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

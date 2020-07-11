@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import {FootballDataService} from "../../services/football-data.service";
-import {Competition} from "../../models/competition";
-import {Match} from "../../models/match";
+import {Competition} from "../../interfaces/competition";
+import {Match} from "../../interfaces/match";
+import {BreadcrumbItem} from "../../models/breadcrumb-item";
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-matches',
@@ -14,11 +16,14 @@ export class MatchesComponent implements OnInit {
   competition: Competition;
   matches: Match[];
   loading: boolean;
+  breadcrumbItems: BreadcrumbItem[];
+  moment: any = moment;
 
   constructor(
     private route: ActivatedRoute,
     private footballDataService: FootballDataService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.competitionName = this.route.snapshot.params.competitionName;
@@ -29,6 +34,7 @@ export class MatchesComponent implements OnInit {
       this.loading = false;
       this.competition = data["competition"];
       this.matches = data["matches"];
+      this.breadcrumbItems = [new BreadcrumbItem(this.competition.name, "#", true)]
     })
   }
 

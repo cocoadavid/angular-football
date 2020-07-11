@@ -1,0 +1,11 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb ngf-breadcrumb">
+    <li class="breadcrumb-item ngf-breadcrumb-item">
+      <a routerLink="/">Competitions</a>
+    </li>
+    <li class="breadcrumb-item ngf-breadcrumb-item" *ngFor="let link of links">
+      <a *ngIf="!link.active" routerLink="{{link.routerLink}}">{{link.name}}</a>
+      <span *ngIf="link.active">{{link.name}}</span>
+    </li>
+  </ol>
+</nav>

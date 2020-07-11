@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FootballDataService} from "../../services/football-data.service";
-import {Competition} from "../../models/competition";
+import {Competition} from "../../interfaces/competition";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,6 @@ import {Competition} from "../../models/competition";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  title = "Competitions";
   competitions: Competition[];
   loading: boolean;
 

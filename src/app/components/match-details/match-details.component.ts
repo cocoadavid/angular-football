@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import {FootballDataService} from "../../services/football-data.service";
-import {MatchDetails} from "../../models/match-details";
+import {BreadcrumbItem} from "../../models/breadcrumb-item";
 
 @Component({
   selector: 'app-match-details',
@@ -10,8 +10,9 @@ import {MatchDetails} from "../../models/match-details";
 })
 export class MatchDetailsComponent implements OnInit {
   matchId: number;
-  matchDetails: MatchDetails;
+  matchDetails;
   competitionCode: string;
+  breadcrumbItems: BreadcrumbItem[];
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,18 @@ export class MatchDetailsComponent implements OnInit {
     this.footballDataService.getMatchDetails(this.matchId).subscribe(data => {
       console.log(data);
       this.matchDetails = data["match"];
+      this.breadcrumbItems = [
+        new BreadcrumbItem(
+          this.matchDetails?.competition?.name || this.competitionCode,
+          `/${this.competitionCode}`,
+          false
+        ),
+        new BreadcrumbItem(
+          "Match",
+          `#`,
+          true
+        ),
+      ];
     })
   }
 
