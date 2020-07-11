@@ -1,4 +1,3 @@
-import { API_KEY } from '../apiKey';
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -6,7 +5,7 @@ import { API_KEY } from '../apiKey';
 export const environment = {
   production: false,
   apiUrl: 'https://api.football-data.org/v2',
-  apiKey: API_KEY,
+  apiKey: '51a009505a2044468a8a03e1c66456f7', // I know this should not be here in a real product
 };
 
 /*
