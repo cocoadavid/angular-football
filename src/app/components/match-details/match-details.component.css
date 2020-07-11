@@ -1,5 +1,6 @@
 .match-details-score-and-teams {
-  font-size: 2rem;
+  font-size: 2.25rem;
+  margin: 1.125rem 0;
 }
 
 .match-info, .match-clock {

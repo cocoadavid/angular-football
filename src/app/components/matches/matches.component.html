@@ -1,7 +1,5 @@
 <app-breadcrumb [links]="breadcrumbItems"></app-breadcrumb>
-<div class="spinner-border" role="status" *ngIf="loading">
-  <span class="sr-only">Loading...</span>
-</div>
+<app-spinner [loading]="loading"></app-spinner>
 <div class="container">
   <a class="row match-link" *ngFor="let match of matches" routerLink="/{{competition.code}}/{{match.id}}">
     <span class="col-md first-col">{{moment(match.utcDate).format("DD/MM HH:mm")}}</span>

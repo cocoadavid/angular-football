@@ -1,8 +1,6 @@
 <app-breadcrumb></app-breadcrumb>
+<app-spinner [loading]="loading"></app-spinner>
 <div class="row">
-  <div class="spinner-border" role="status" *ngIf="loading">
-    <span class="sr-only">Loading...</span>
-  </div>
   <div class="col-sm-4 col-lg-3" *ngFor="let competition of competitions">
     <a class="competition-link" routerLink="{{competition.code}}">{{competition.name}}</a>
   </div>

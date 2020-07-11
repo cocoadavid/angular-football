@@ -19,7 +19,9 @@ export class MatchDetailsComponent implements OnInit, OnDestroy {
   breadcrumbItems: BreadcrumbItem[];
   moment: any = moment;
   matchClock: number;
-  subscription;
+  loading: boolean;
+  matchClockSubscription;
+  matchSubscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,10 +32,12 @@ export class MatchDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.matchId = this.route.snapshot.params.matchId;
+    this.loading = true;
     this.footballDataService.getMatchDetails(this.matchId).subscribe(data => {
-      console.log(data);
+      this.loading = false;
       this.matchDetails = data["match"];
       this.timerForMatchClock();
+      this.timerForMatch();
       this.breadcrumbItems = [
         new BreadcrumbItem(
           this.matchDetails?.competition?.name || this.competitionCode,
@@ -50,13 +54,24 @@ export class MatchDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.subscription.unsubscribe();
+    this.matchClockSubscription.unsubscribe();
+    this.matchSubscription.unsubscribe();
   }
 
+  private timerForMatch(){
+    // update every minute
+    const source = timer(1000 * 60, 1000 * 60);
+    this.matchSubscription = source.subscribe(val => {
+      this.footballDataService.getMatchDetails(this.matchId).subscribe(data => {
+        this.matchDetails = data["match"];
+      })
+    });
+  }
 
   private timerForMatchClock(){
+    // update every minute
     const source = timer(1000, 1000 * 60);
-    this.subscription = source.subscribe(val => {
+    this.matchClockSubscription = source.subscribe(val => {
       this.calculateMatchClock();
     });
   }
