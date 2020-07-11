@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
     this.footballDataService.getCompetitions().subscribe(data => {
       this.loading = false;
       this.competitions = data["competitions"];
-      console.log(this.competitions)
     })
   }
 }

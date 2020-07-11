@@ -55,6 +55,22 @@ a:hover {
   color: rgb(50,50,50);
 }
 
+.elevated-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.elevated-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.elevated-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.elevated-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 @keyframes spin {
   0% {
     -moz-transform: rotateY(0deg);
@@ -73,48 +89,4 @@ a:hover {
     -ms-transform: rotateY(360deg);
     transform: rotateY(360deg);
   }
-}
-
-/* Color Theme Swatches in Hex */
-.Sports-Training-Center---Fortuna-Düsseldorf-1-hex { color: #BF0A2B; }
-.Sports-Training-Center---Fortuna-Düsseldorf-2-hex { color: #D93232; }
-.Sports-Training-Center---Fortuna-Düsseldorf-3-hex { color: #D97979; }
-.Sports-Training-Center---Fortuna-Düsseldorf-4-hex { color: #F2F2F2; }
-.Sports-Training-Center---Fortuna-Düsseldorf-5-hex { color: #0D0D0D; }
-
-/* Color Theme Swatches in RGBA */
-.Sports-Training-Center---Fortuna-Düsseldorf-1-rgba { color: rgba(191, 9, 42, 1); }
-.Sports-Training-Center---Fortuna-Düsseldorf-2-rgba { color: rgba(216, 49, 49, 1); }
-.Sports-Training-Center---Fortuna-Düsseldorf-3-rgba { color: rgba(216, 121, 121, 1); }
-.Sports-Training-Center---Fortuna-Düsseldorf-4-rgba { color: rgba(242, 242, 242, 1); }
-.Sports-Training-Center---Fortuna-Düsseldorf-5-rgba { color: rgba(12, 12, 12, 1); }
-
-/* Color Theme Swatches in Hex */
-.American-football-stadium-with-bright-lights-sports-background-1-hex { color: #6085A6; }
-.American-football-stadium-with-bright-lights-sports-background-2-hex { color: #364959; }
-.American-football-stadium-with-bright-lights-sports-background-3-hex { color: #34592E; }
-.American-football-stadium-with-bright-lights-sports-background-4-hex { color: #5E8C30; }
-.American-football-stadium-with-bright-lights-sports-background-5-hex { color: #0D0D0D; }
-
-/* Color Theme Swatches in RGBA */
-.American-football-stadium-with-bright-lights-sports-background-1-rgba { color: rgba(96, 133, 165, 1); }
-.American-football-stadium-with-bright-lights-sports-background-2-rgba { color: rgba(53, 72, 89, 1); }
-.American-football-stadium-with-bright-lights-sports-background-3-rgba { color: rgba(52, 89, 46, 1); }
-.American-football-stadium-with-bright-lights-sports-background-4-rgba { color: rgba(93, 140, 47, 1); }
-.American-football-stadium-with-bright-lights-sports-background-5-rgba { color: rgba(12, 12, 12, 1); }
-
-.elevated-1 {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.elevated-2 {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.elevated-3 {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-.elevated-4 {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

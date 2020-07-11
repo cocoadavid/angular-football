@@ -34,6 +34,10 @@ a.match-link:last-of-type {
   text-align: right;
 }
 
+.example-link {
+  color: #5E8C30;
+}
+
 @media screen and (max-width: 768px) {
   .match-details-score-and-teams {
     font-size: 1rem;

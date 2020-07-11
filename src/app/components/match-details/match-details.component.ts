@@ -84,8 +84,8 @@ export class MatchDetailsComponent implements OnInit, OnDestroy {
       let startDate = new Date(this.matchDetails.utcDate);
       if(this.matchDetails.status === "IN_PLAY"){
         let diffInMinutes = diffBetweenDatesInMinutes(now, startDate);
-        // if it is second half, subtract 20 minutes (15 minutes + injury time, extra time, etc)
-        this.matchClock = this.isFirstHalf() ? diffInMinutes : diffInMinutes - 20;
+        // if it is second half, subtract 18 minutes (15 minutes + injury time, extra time, etc)
+        this.matchClock = this.isFirstHalf() ? diffInMinutes : diffInMinutes - 18;
       }
     }
   }

@@ -31,7 +31,8 @@ export class MatchesComponent implements OnInit, OnDestroy {
     this.competitionName = this.route.snapshot.params.competitionName;
     localStorage.setItem("lastCompetitionCode", this.competitionName);
     this.loading = true;
-    this.footballDataService.getMatches(this.competitionName).subscribe(data => {
+    this.footballDataService.getMatches(this.competitionName).subscribe(
+      data => {
       this.loading = false;
       this.competition = data["competition"];
       this.matches = data["matches"];
@@ -40,7 +41,11 @@ export class MatchesComponent implements OnInit, OnDestroy {
       this.interval = interval(1000 * 60).subscribe(value => {
         this.getMatchInfos();
       })
-    })
+    },
+      error => {
+        console.log(error.error.message);
+        this.loading = false;
+      })
   }
 
   ngOnDestroy() {
@@ -48,9 +53,14 @@ export class MatchesComponent implements OnInit, OnDestroy {
   }
 
   private getMatchInfos(){
-    this.footballDataService.getMatches(this.competitionName).subscribe(data => {
+    this.footballDataService.getMatches(this.competitionName).subscribe(
+      data => {
       this.matches = data["matches"];
-    })
+    },
+      error => {
+        console.log(error.error.message);
+        this.loading = false;
+      })
   }
 
 }

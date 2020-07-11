@@ -25,6 +25,7 @@ export class FootballDataService {
   }
 
   getMatches(competitionName){
+    // matches for 1 month
     const params = new HttpParams()
       .set('dateFrom', moment().format("YYYY-MM-DD"))
       .set('dateTo', moment().add(1, "month").format("YYYY-MM-DD"))

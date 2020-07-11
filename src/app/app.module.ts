@@ -8,12 +8,22 @@ import { HomeComponent } from './components/home/home.component';
 import { MatchesComponent } from './components/matches/matches.component';
 import { MatchDetailsComponent } from './components/match-details/match-details.component';
 import { BreadcrumbComponent } from './components/shared/breadcrumb/breadcrumb.component';
-import { ProgressBarComponent } from './components/shared/progress-bar/progress-bar.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MatchesComponent, MatchDetailsComponent, BreadcrumbComponent, ProgressBarComponent, SpinnerComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MatchesComponent,
+    MatchDetailsComponent,
+    BreadcrumbComponent,
+    SpinnerComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
