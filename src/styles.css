@@ -38,6 +38,14 @@ a:hover {
   background-color: #CFAC44;
 }
 
+a.yellow-link {
+  color: #CFAC44;
+}
+
+a.yellow-link:hover {
+  text-decoration: underline;
+}
+
 .live, .half-time {
   color: #ffffff;
   font-size: 0.75rem;

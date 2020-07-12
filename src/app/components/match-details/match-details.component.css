@@ -29,7 +29,7 @@
 
 .details-score {
   justify-content: center;
-  max-width: 200px;
+  max-width: 212px;
 }
 
 .winner, .loser, .draw {
@@ -51,11 +51,15 @@
   background-color: #CFAC44;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 768px) {
   .match-details-score-and-teams {
     font-size: 0.875rem;
   }
   .details-score {
-    max-width: 140px;
+    max-width: 112px;
+  }
+  .winner, .loser, .draw {
+    width: 2px;
+    margin: 0 8px;
   }
 }
