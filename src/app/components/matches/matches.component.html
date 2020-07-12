@@ -2,8 +2,8 @@
 <app-spinner [loading]="loading"></app-spinner>
 <p *ngIf="!loading && matches?.length === 0" class="no-matches-text">
   There are no ongoing and upcoming events for the next month in this competition.<br/>
-  Please try another competition, for example the <a class="example-link" href="/PL">Premier League</a>
-  or <a class="example-link" href="/SA">Seria A</a>.
+  Please try another competition, for example the <a class="yellow-link" href="/PL">Premier League</a>
+  or <a class="yellow-link" href="/SA">Seria A</a>.
 </p>
 <div class="container">
   <a class="row match-link" *ngFor="let match of matches" routerLink="/{{competition.code}}/{{match.id}}">

@@ -4,9 +4,6 @@
   Matchday {{matchDetails?.season?.currentMatchday}} |
   {{matchDetails ? moment(matchDetails?.utcDate).format("DD/MM/YYYY HH:mm") : ''}}
 </div>
-<!--<div *ngIf="matchDetails?.venue" class="match-info">-->
-<!--  venue: {{matchDetails?.venue}}-->
-<!--</div>-->
 <div class="match-info">
   <span class="live ngf-green" *ngIf="matchDetails?.status === 'IN_PLAY'">live</span>
   <span class="half-time ngf-yellow" *ngIf="matchDetails?.status === 'PAUSED'">half - time</span>
